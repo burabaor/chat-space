@@ -5,21 +5,53 @@
 #contents {
   height: 100vh;
   min-width: 1000px;
+  background-color: gray;
 }
 
 #sidebar {
   height: 100%;
   float: left;
-  width: 260px;
+  width: 300px;
+
+  .sidebar-nav {
+    height: $sidebar-nav-height;
+    padding: $sidebar-padding;
+    background-color: #253141;
+    .sidebar-nav__user-name {
+      font: bold 16px Arial,sans-serif;
+      color: $sidebar-font-color;
+      line-height: $sidebar-nav-height;
+    }
+  }
+
+  .sidebar-body {
+    height: calc(100vh - 100px);
+    padding: $sidebar-padding;
+    background-color: #2f3e51;
+    .joined-group {
+      width: 100%;
+      padding: 20px 0;
+      background-color: inherit;
+      border: none;
+      text-align: left;
+      color: $sidebar-font-color;
+      .joined-group__group-name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+    }
+  }
 }
 
 #chat {
   width: calc(100% - 300px);
   float: right;
+  background-color: purple;
 }
 
 #chat-footer {
   position: absolute;
+  background-color: beige;
   bottom: 0;
   left: 300px;
   width: calc(100% - 300px);
