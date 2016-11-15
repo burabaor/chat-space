@@ -1,4 +1,4 @@
-.contents
+#contents
   #sidebar
     .sidebar-nav
       %span.sidebar-nav__user-name hoge
@@ -14,19 +14,18 @@
 
 
   #chat
-    .chat-nav
+    #chat-nav
       %span.chat-nav__group-name testsss
       %span.chat-nav__group-members Members: user1 user2
       %span.chat-nav__edit-group Edit
-    .chat-body
+    #chat-body
       .message
         %span.message__user-name user1
         %span.message__sended-date 2000/01/01 00:00:00
         %span.message__content hogehoge
 
-    .new-message
-      %form
-        .form-body
-          %input.new-message__input-form{type: "text", placeholder: "type a message"}
-          %input.new-message__file-form{type: "file", style: "display:none"}
-          %button.new-message__submit-btn{type: "submit"} Send
+    #chat-footer
+      %form.new-message
+        %input.new-message__input-form{type: "text", placeholder: "type a message"}
+        %input.new-message__file-form{type: "file", style: "display:none"}
+        %button.new-message__submit-btn{type: "submit"} Send
