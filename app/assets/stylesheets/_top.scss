@@ -89,11 +89,11 @@
   /* chat body */
   .chat-body {
     overflow: scroll;
-    height: calc(100vh - 190px);
+    height: calc(100vh - 238px);
     padding: 46px $chat-padding 0;
-    background-color: #AAA;
+    background-color: #fafafa;
     border-top: 1px solid #eee;
-    color: $message-color;
+    color: $message-font-color;
     .message {
       padding-bottom: 40px;
       &__detail {
@@ -111,7 +111,7 @@
       &__content {
         font-size: 14px;
         line-height: 14px;
-        color: $message-color;
+        color: $message-font-color;
       }
     }
   }
@@ -120,11 +120,30 @@
 /* chat footer */
 #chat-footer {
   position: absolute;
-  background-color: beige;
   bottom: 0;
   left: 300px;
   width: calc(100% - 300px);
   min-width: 700px;
+  background-color: #ddd;
+
+  .new-message {
+    padding: 20px $chat-padding;
+    &__input-form {
+      width: calc(100% - 141px);
+      height: $form-height;
+      padding: 0 10px;
+      margin-right: 15px;
+      border: none;
+    }
+    &__submit-button {
+      width: 100px;
+      height: $form-height;
+      border: none;
+      font-size: 16px;
+      background-color: $notification-color;
+      color: #FFF;
+    }
+  }
 }
 
 
