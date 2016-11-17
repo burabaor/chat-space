@@ -18,9 +18,15 @@
     height: $nav-height;
     padding: $sidebar-padding;
     &__user-name {
+      display: inline-block;
       font: bold 16px Arial,sans-serif;
       color: $sidebar-font-color;
       line-height: $nav-height;
+    }
+    &__settings {
+      float: right;
+      padding: 15px 0 15px 3px;
+      margin: 20px 0;
     }
   }
 
@@ -131,9 +137,14 @@
     &__input-form {
       width: calc(100% - 141px);
       height: $form-height;
+      float: left;
       padding: 0 10px;
       margin-right: 15px;
       border: none;
+    }
+    i {
+      float: left;
+      margin: 20px 0 0 -45px;
     }
     &__submit-button {
       width: 100px;

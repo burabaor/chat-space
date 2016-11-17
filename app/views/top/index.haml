@@ -1,9 +1,11 @@
 #contents
   .sidebar
     .sidebar-nav
-      %span.sidebar-nav__user-name hoge
-      %span.sidebar-nav__make-group
-      %span.sidebar-nav__edit-user
+      .sidebar-nav__user-name
+        %span hoge
+      .sidebar-nav__settings
+        %i.fa.fa-pencil-square-o.fa-inverse.fa-lg
+        %i.fa.fa-cog.fa-inverse.fa-lg
     .sidebar-body
       %button.joined-group
         .joined-group__group-name test
@@ -30,5 +32,6 @@
     #chat-footer
       %form.new-message
         %input.new-message__input-form{type: "text", placeholder: "type a message"}
+        %i.fa.fa-image.fa-lg
         %input.new-message__file-form{type: "file", style: "display:none"}
         %button.new-message__submit-button{type: "submit"} Send
