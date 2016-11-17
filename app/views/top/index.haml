@@ -1,5 +1,5 @@
 #contents
-  #sidebar
+  .sidebar
     .sidebar-nav
       %span.sidebar-nav__user-name hoge
       %span.sidebar-nav__make-group
@@ -13,17 +13,48 @@
         .joined-group__group-message hogu
 
 
-  #chat
-    #chat-nav
+  .chat
+    .chat-nav
       .chat-nav__left
         %h2 testsss
         %span Members: user1 user2
       .chat-nav__right
         %button Edit
-    #chat-body
+    .chat-body
       .message
-        %span.message__user-name user1
-        %span.message__sended-date 2000/01/01 00:00:00
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
+        %span.message__content hogehoge
+      .message
+        .message__detail
+          %span.message__user-name user1
+          %span.message__sended-date 2000/01/01 00:00:00
         %span.message__content hogehoge
 
     #chat-footer

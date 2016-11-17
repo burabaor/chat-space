@@ -7,22 +7,24 @@
   min-width: 1000px;
 }
 
-#sidebar {
+.sidebar {
   height: 100%;
   float: left;
   width: 300px;
 
-  .sidebar-nav {
+  /* sidebar navigation */
+  &-nav {
     background-color: #253141;
     height: $nav-height;
     padding: $sidebar-padding;
-    .sidebar-nav__user-name {
+    &__user-name {
       font: bold 16px Arial,sans-serif;
       color: $sidebar-font-color;
       line-height: $nav-height;
     }
   }
 
+  /* sidebar group list */
   .sidebar-body {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
@@ -34,29 +36,28 @@
       border: none;
       text-align: left;
       color: $sidebar-font-color;
-
-      .joined-group__group-name {
+      &__group-name {
         padding: $sidebar-padding;
         font-size: 15px;
         margin-bottom: 5px;
       }
-      .joined-group__group-message {
+      &__group-message {
         padding: $sidebar-padding;
       }
     }
   }
 }
 
-#chat {
+.chat {
   width: calc(100% - 300px);
   float: right;
 
-  #chat-nav {
+  /* chat navigation */
+  &-nav {
     @include clearfix();
     height: $nav-height;
-    padding: 0 $chat-nav-padding;
-
-    .chat-nav__left {
+    padding: 0 $chat-padding;
+    &__left {
       display: inline-block;
       padding: 35px 0 0;
       h2 {
@@ -68,13 +69,12 @@
       span {
         float: left;
         font-size: 12px;
-        color: #999;
+        color: $chat-supplement;
       }
     }
-    .chat-nav__right {
+    &__right {
       float: right;
       padding: 28px 0;
-
       button {
         height: 40px;
         padding: 0 20px;
@@ -86,11 +86,38 @@
     }
   }
 
-  #chat-body {
+  /* chat body */
+  .chat-body {
+    overflow: scroll;
+    height: calc(100vh - 190px);
+    padding: 46px $chat-padding 0;
     background-color: #AAA;
+    border-top: 1px solid #eee;
+    color: $message-color;
+    .message {
+      padding-bottom: 40px;
+      &__detail {
+        margin-bottom: 10px;
+        .message__user-name {
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+        }
+        .message__sended-date {
+          font-size: 12px;
+          color: $chat-supplement;
+        }
+      }
+      &__content {
+        font-size: 14px;
+        line-height: 14px;
+        color: $message-color;
+      }
+    }
   }
 }
 
+/* chat footer */
 #chat-footer {
   position: absolute;
   background-color: beige;
