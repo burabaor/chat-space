@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#contents {
+.contents {
   height: 100vh;
   min-width: 1000px;
 }
@@ -36,11 +36,13 @@
     background-color: #2f3e51;
 
     .joined-group {
+      display: block;
       width: 100%;
       padding: 20px 0;
+      text-align: left;
+      text-decoration: none;
       background-color: inherit;
       border: none;
-      text-align: left;
       color: $sidebar-font-color;
       &__group-name {
         padding: $sidebar-padding;
@@ -81,10 +83,13 @@
     &__right {
       float: right;
       padding: 28px 0;
-      button {
+      a {
+        display: block;
         height: 40px;
         padding: 0 20px;
+        line-height: 40px;
         border: solid 2px $notification-color;
+        text-decoration: none;
         background-color: #FFF;
         color: $notification-color;
         font-size: 14px;
@@ -124,7 +129,7 @@
 }
 
 /* chat footer */
-#chat-footer {
+.chat-footer {
   position: absolute;
   bottom: 0;
   left: 300px;
@@ -147,6 +152,7 @@
       margin: 20px 0 0 -45px;
     }
     &__submit-button {
+      padding: 0;
       width: 100px;
       height: $form-height;
       border: none;

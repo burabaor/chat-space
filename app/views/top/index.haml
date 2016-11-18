@@ -1,16 +1,18 @@
-#contents
+.contents
   .sidebar
     .sidebar-nav
       .sidebar-nav__user-name
         %span hoge
       .sidebar-nav__settings
-        %i.fa.fa-pencil-square-o.fa-inverse.fa-lg
-        %i.fa.fa-cog.fa-inverse.fa-lg
+        %a(href="#")
+          .fa.fa-pencil-square-o.fa-inverse.fa-lg
+        %a(href="#")
+          .fa.fa-cog.fa-inverse.fa-lg
     .sidebar-body
-      %button.joined-group
+      %a(href="#" class="joined-group")
         .joined-group__group-name test
         .joined-group__group-message huge
-      %button.joined-group
+      %a(href="#" class="joined-group")
         .joined-group__group-name test-man
         .joined-group__group-message hogu
 
@@ -21,7 +23,7 @@
         %h2 testsss
         %span Members: user1 user2
       .chat-nav__right
-        %button Edit
+        %a(href="#") Edit
     .chat-body
       .message
         .message__detail
@@ -29,7 +31,7 @@
           %span.message__sended-date 2000/01/01 00:00:00
         %span.message__content hogehoge
 
-    #chat-footer
+    .chat-footer
       %form.new-message
         %input.new-message__input-form{type: "text", placeholder: "type a message"}
         %i.fa.fa-image.fa-lg
