@@ -1,7 +1,7 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "./reset";
-@import "./mixin/mixins";
-@import "./config/top";
+@import "./mixin/*";
+@import "./config/*";
 
 @import "./top";
