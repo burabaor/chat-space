@@ -1,59 +1,7 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 .contents {
   height: 100vh;
   min-width: 1000px;
-}
-
-.sidebar {
-  height: 100%;
-  float: left;
-  width: 300px;
-
-  /* sidebar navigation */
-  &-nav {
-    background-color: #253141;
-    height: $nav-height;
-    padding: $sidebar-padding;
-    &__user-name {
-      display: inline-block;
-      font: bold 16px Arial,sans-serif;
-      color: $sidebar-font-color;
-      line-height: $nav-height;
-    }
-    &__settings {
-      float: right;
-      padding: 15px 0 15px 3px;
-      margin: 20px 0;
-    }
-  }
-
-  /* sidebar group list */
-  .sidebar-body {
-    height: calc(100vh - 100px);
-    background-color: #2f3e51;
-
-    .joined-group {
-      display: block;
-      width: 100%;
-      padding: 20px 0;
-      text-align: left;
-      text-decoration: none;
-      background-color: inherit;
-      border: none;
-      color: $sidebar-font-color;
-      &__group-name {
-        padding: $sidebar-padding;
-        font-size: 15px;
-        margin-bottom: 5px;
-      }
-      &__group-message {
-        padding: $sidebar-padding;
-      }
-    }
-  }
 }
 
 .chat {
@@ -163,6 +111,3 @@
   }
 }
 
-
-/*いくつかの要素をまとめる要素を作る
-そこにpadding適用する*/
