@@ -1,0 +1,113 @@
+
+.contents {
+  height: 100vh;
+  min-width: 1000px;
+}
+
+.chat {
+  width: calc(100% - 300px);
+  float: right;
+
+  /* chat navigation */
+  &-nav {
+    @include clearfix();
+    height: $nav-height;
+    padding: 0 $chat-padding;
+    &__left {
+      display: inline-block;
+      padding: 35px 0 0;
+      h2 {
+        padding-bottom: 15px;
+        font-size: 20px;
+        line-height: 20px;
+        color: #333;
+      }
+      span {
+        float: left;
+        font-size: 12px;
+        color: $chat-supplement;
+      }
+    }
+    &__right {
+      float: right;
+      padding: 28px 0;
+      a {
+        display: block;
+        height: 40px;
+        padding: 0 20px;
+        line-height: 40px;
+        border: solid 2px $notification-color;
+        text-decoration: none;
+        background-color: #FFF;
+        color: $notification-color;
+        font-size: 14px;
+      }
+    }
+  }
+
+  /* chat body */
+  .chat-body {
+    overflow: scroll;
+    height: calc(100vh - 238px);
+    padding: 46px $chat-padding 0;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    color: $message-font-color;
+    .message {
+      padding-bottom: 40px;
+      &__detail {
+        margin-bottom: 10px;
+        .message__user-name {
+          font-size: 16px;
+          font-weight: bold;
+          margin-right: 10px;
+        }
+        .message__sended-date {
+          font-size: 12px;
+          color: $chat-supplement;
+        }
+      }
+      &__content {
+        font-size: 14px;
+        line-height: 14px;
+        color: $message-font-color;
+      }
+    }
+  }
+}
+
+/* chat footer */
+.chat-footer {
+  position: absolute;
+  bottom: 0;
+  left: 300px;
+  width: calc(100% - 300px);
+  min-width: 700px;
+  background-color: #ddd;
+
+  .new-message {
+    padding: 20px $chat-padding;
+    &__input-form {
+      width: calc(100% - 141px);
+      height: $form-height;
+      float: left;
+      padding: 0 10px;
+      margin-right: 15px;
+      border: none;
+    }
+    i {
+      float: left;
+      margin: 20px 0 0 -45px;
+    }
+    &__submit-button {
+      padding: 0;
+      width: 100px;
+      height: $form-height;
+      border: none;
+      font-size: 16px;
+      background-color: $notification-color;
+      color: #FFF;
+    }
+  }
+}
+
