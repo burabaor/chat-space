@@ -1,0 +1,9 @@
+.notice {
+  @include notification();
+  background-color: $notification-color;
+}
+
+.alert {
+  @include notification();
+  background-color: $alert-color;
+}
