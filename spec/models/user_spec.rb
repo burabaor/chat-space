@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe User do
   describe '#create' do
+
+  # invalid
     it "is invalid without a name" do
      user = build(:user, name: "")
      user.valid?
@@ -22,19 +24,18 @@ describe User do
      user.valid?
      expect(user.errors[:password_confirmation]).to include("とパスワードの入力が一致しません。")
     end
-    it "is valid with all data" do
-      user = build(:user)
-      user.valid?
-      expect(user).to be_valid
-    end
     it "is invalid with existing email" do
       user = create(:user)
-
       anothor_user = build(:user)
       anothor_user.valid?
       expect(anothor_user.errors[:email]).to include("はすでに存在します。")
     end
 
-
+  # valid
+    it "is valid with all data" do
+      user = build(:user)
+      user.valid?
+      expect(user).to be_valid
+    end
   end
 end
