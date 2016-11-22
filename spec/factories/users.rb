@@ -1,7 +1,9 @@
+require 'ffaker'
+
 FactoryGirl.define do
 
   factory :user do
-    name 'hoge'
+    name FFaker::Name.name
     email 'test@tests'
     password "122333"
     password_confirmation '122333'
