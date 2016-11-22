@@ -9,4 +9,7 @@ FactoryGirl.define do
     password var_password
     password_confirmation var_password
   end
+  trait :password_confirmation do
+    password_confirmation FFaker::Internet.password
+  end
 end
