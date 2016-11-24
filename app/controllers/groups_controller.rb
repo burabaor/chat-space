@@ -1,6 +1,9 @@
 class GroupsController < ApplicationController
   before_action :find_group, only: [:show, :edit, :update]
 
+  def index
+  @all_groups = Group.all
+  end
   def show
     @all_groups = Group.all
   end

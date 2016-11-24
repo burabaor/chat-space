@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'top#index'
-  resources :groups, except: [:index, :destroy]
+  root 'groups#index'
+  resources :groups, except: [:destroy]
 end
