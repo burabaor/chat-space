@@ -1,0 +1,20 @@
+.chat
+  .chat-nav
+    .chat-nav__left
+      %h2 #{group.name}
+      %span Members: user1 user2
+    .chat-nav__right
+      =link_to "Edit", edit_group_path(group)
+  .chat-body
+    .message
+      .message__detail
+        %span.message__user-name user1
+        %span.message__sended-date 2000/01/01 00:00:00
+      %span.message__content hogehoge
+
+  .chat-footer
+    %form.new-message
+      %input.new-message__input-form{type: "text", placeholder: "type a message"}
+      %i.fa.fa-image.fa-lg
+      %input.new-message__file-form{type: "file", style: "display:none"}
+      %button.new-message__submit-button{type: "submit"} Send
