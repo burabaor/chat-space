@@ -4,7 +4,7 @@ class GroupsController < ApplicationController
   end
   def create
     Group.create(create_params)
-    redirect_to root and return
+    redirect_to :root and return
   end
   def edit
     @group = find_group
@@ -12,7 +12,7 @@ class GroupsController < ApplicationController
   def update
     @group = find_group
     @group.update(update_params)
-    redirect_to root
+    redirect_to :root and return
   end
 
   private
