@@ -9,13 +9,13 @@ class GroupsController < ApplicationController
   end
   def create
     Group.create(create_params)
-    redirect_to :root and return
+    redirect_to :root
   end
   def edit
   end
   def update
     @group.update(update_params)
-    redirect_to :root and return
+    redirect_to :root
   end
 
   private
