@@ -23,6 +23,6 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
   end
   def group_params
-    params.require(:group).permit(:name)
+    params.require(:group).permit(:name, {user_ids: []})
   end
 end
