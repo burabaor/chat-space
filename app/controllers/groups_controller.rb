@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  before_action :find_group, only: [:edit, :update]
+
   def new
     @group = Group.new
   end
@@ -7,17 +9,15 @@ class GroupsController < ApplicationController
     redirect_to :root and return
   end
   def edit
-    @group = find_group
   end
   def update
-    @group = find_group
     @group.update(update_params)
     redirect_to :root and return
   end
 
   private
   def find_group
-    Group.find(params[:id])
+    @group = Group.find(params[:id])
   end
   def create_params
     params.require(:group).permit(:id, :name)
