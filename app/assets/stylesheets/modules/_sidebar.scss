@@ -26,6 +26,9 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
 
+    a {
+      text-decoration: none;
+    }
     .joined-group {
       display: block;
       width: 100%;
@@ -42,6 +45,7 @@
       }
       &__group-message {
         padding: $sidebar-padding;
+        font-size: 11px;
       }
     }
   }

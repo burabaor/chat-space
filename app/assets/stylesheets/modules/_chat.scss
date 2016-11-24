@@ -13,6 +13,7 @@
     @include clearfix();
     height: $nav-height;
     padding: 0 $chat-padding;
+    background-color: #fff;
     &__left {
       display: inline-block;
       padding: 35px 0 0;
