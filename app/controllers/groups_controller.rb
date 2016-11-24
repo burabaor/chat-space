@@ -8,13 +8,13 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
   def create
-    Group.create(create_params)
+    Group.create(group_params)
     redirect_to :root
   end
   def edit
   end
   def update
-    @group.update(update_params)
+    @group.update(group_params)
     redirect_to :root
   end
 
@@ -22,10 +22,7 @@ class GroupsController < ApplicationController
   def find_group
     @group = Group.find(params[:id])
   end
-  def create_params
-    params.require(:group).permit(:id, :name)
-  end
-  def update_params
+  def group_params
     params.require(:group).permit(:name)
   end
 end
