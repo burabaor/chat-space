@@ -9,7 +9,7 @@
         .fa.fa-cog.fa-inverse.fa-lg
   .sidebar-body
     -groups.each do |group|
-      =link_to group_path(group) do
+      =link_to group_messages_path(group) do
         .joined-group
           .joined-group__group-name #{group.name}
           .joined-group__group-message huge
