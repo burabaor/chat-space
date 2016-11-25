@@ -47,6 +47,7 @@ group :development do
   gem 'spring'
 end
 
+gem "pry-rails"
 gem "haml-rails", "~> 0.9"
 gem "font-awesome-sass"
 gem 'devise'
