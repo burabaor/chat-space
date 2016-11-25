@@ -3,7 +3,6 @@ class MessagesController < ApplicationController
     @group = Group.find(params[:group_id])
     @groups = Group.all
     @message = Message.new
-    @messages = Message.where(group_id: params[:group_id])
   end
   def create
     message = Message.create(create_params)

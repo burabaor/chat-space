@@ -8,7 +8,7 @@
     .chat-nav__right
       =link_to "Edit", edit_group_path(group)
   .chat-body
-    =render partial: "message", collection: @messages
+    =render partial: "message", collection: @group.messages
 
   .chat-footer
     =form_for message, url: group_messages_path(group), html: {class: "new-message"} do |f|
