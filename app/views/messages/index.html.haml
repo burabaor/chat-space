@@ -3,10 +3,7 @@
   .chat
     .chat-nav
       .chat-nav__left
-        %h2 #{@group.name}
-        %span Members:
-        -@group.users.each do |user|
-          %span= user.name
+        =render partial: "group-info", locals: {group: @group}
       .chat-nav__right
         =link_to "Edit", edit_group_path(@group)
     .chat-body
