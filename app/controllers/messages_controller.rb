@@ -5,7 +5,10 @@ class MessagesController < ApplicationController
     @groups = Group.all
   end
   def create
-    Message.create(create_params)
+    message = Message.create(create_params)
+    if message.body.blank?
+      flash[:alert] = "メッセージを入力してください"
+    end
     redirect_to :back
   end
 

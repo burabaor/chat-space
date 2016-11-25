@@ -14,7 +14,7 @@
 
   .chat-footer
     =form_for message, url: group_messages_path(group), html: {class: "new-message"} do |f|
-      =f.text_field :body, class: "new-message__input-form", placeholder: "type a message", required: true
+      =f.text_field :body, class: "new-message__input-form", placeholder: "type a message"
       %i.fa.fa-image.fa-lg
       %input.new-message__file-form{type: "file", style: "display:none"}
       =f.submit class: "new-message__submit-button", value: "Send"
