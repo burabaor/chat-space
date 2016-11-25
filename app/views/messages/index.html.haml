@@ -3,7 +3,7 @@
   .chat
     .chat-nav
       .chat-nav__left
-        =render partial: "group-info", locals: {group: @group}
+        =render partial: "group-info", locals: {users: @group.users}
       .chat-nav__right
         =link_to "Edit", edit_group_path(@group)
     .chat-body
