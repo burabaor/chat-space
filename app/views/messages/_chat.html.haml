@@ -2,7 +2,9 @@
   .chat-nav
     .chat-nav__left
       %h2 #{group.name}
-      %span Members: user1 user2
+      %span Members:
+      -group.users.each do |user|
+        %span= user.name
     .chat-nav__right
       =link_to "Edit", edit_group_path(group)
   .chat-body
