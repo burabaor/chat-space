@@ -7,9 +7,7 @@ class MessagesController < ApplicationController
   end
   def create
     message = Message.create(create_params)
-    if message.body.blank?
-      flash[:alert] = "メッセージを入力してください"
-    end
+    flash[:alert] = "メッセージを入力してください" if message.body.blank?
     redirect_to :back
   end
 
