@@ -13,8 +13,8 @@
       %span.message__content hogehoge
 
   .chat-footer
-    %form.new-message
-      %input.new-message__input-form{type: "text", placeholder: "type a message"}
+    =form_for message, url: group_messages_path(group), html: {method: :post, class: "new-message"} do |f|
+      =f.text_field :body, class: "new-message__input-form", placeholder: "type a message"
       %i.fa.fa-image.fa-lg
       %input.new-message__file-form{type: "file", style: "display:none"}
-      %button.new-message__submit-button{type: "submit"} Send
+      =f.submit class: "new-message__submit-button", value: "Send"
