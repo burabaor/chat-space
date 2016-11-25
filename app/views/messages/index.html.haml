@@ -1,3 +1,19 @@
 .contents
   =render partial: "common/sidebar", locals: {groups: @groups}
-  =render partial: "chat", locals: {group: @group, message: @message}
+  .chat
+    .chat-nav
+      .chat-nav__left
+        %h2 #{@group.name}
+        %span Members:
+        -@group.users.each do |user|
+          %span= user.name
+      .chat-nav__right
+        =link_to "Edit", edit_group_path(@group)
+    .chat-body
+      =render partial: "message", collection: @group.messages
+    .chat-footer
+      =form_for @message, url: group_messages_path(@group), html: {class: "new-message"} do |f|
+        =f.text_field :body, class: "new-message__input-form", placeholder: "type a message"
+        %i.fa.fa-image.fa-lg
+        %input.new-message__file-form{type: "file", style: "display:none"}
+        =f.submit class: "new-message__submit-button", value: "Send"
