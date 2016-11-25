@@ -10,6 +10,14 @@
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         =f.label :チャットメンバー, class: "chat-group-form__label"
+      .chat-group-form__field--right
+        #chat-group-users
+          .chat-group-user.clearfix
+            =f.collection_check_boxes :user_ids, User.all, :id, :name do |b|
+              -if user_is_member?(@group.id, b.value)
+                -b.label(class: "chat-group-user--hidden") {b.check_box + b.object.name}
+              -else
+                -b.label {b.check_box + b.object.name}
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
       .chat-group-form__field--right

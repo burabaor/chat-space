@@ -90,6 +90,11 @@ body {
       float: left;
       margin-right: 15px;
     }
+    &--hidden {
+      input {
+        display: none;
+      }
+    }
     .chat-group-user__name {
       float: left;
     }
