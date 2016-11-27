@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
   def create
     message = Message.new(create_params)
     flash[:alert] = "メッセージを入力してください" unless message.save
-    redirect_to :back
+    redirect_to group_messages_path(params[:group_id])
   end
 
   private
