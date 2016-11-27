@@ -50,4 +50,18 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
+
+  config.before(:all) do
+    FactoryGirl.factories.clear
+    FactoryGirl.sequences.clear
+    FactoryGirl.definition_file_paths = [File.expand_path('../factories', __FILE__)]
+    FactoryGirl.find_definitions
+    FactoryGirl.reload
+  end
 end
