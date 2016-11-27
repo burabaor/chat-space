@@ -4,6 +4,7 @@ RSpec.describe MessagesController, :type => :controller do
   let(:group) { create(:group) }
   let(:user) { create(:user) }
   let(:message) { { message: attributes_for(:message), group_id: group.id } }
+  let(:empty_message) { { message: attributes_for(:empty_message), group_id: group.id } }
 
   context 'not sign_in user' do
     describe 'GET #index' do
@@ -44,7 +45,7 @@ RSpec.describe MessagesController, :type => :controller do
         expect(response).to redirect_to group_messages_path(group)
       end
       it "has a text in flash-alert when message is empty" do
-        message[:message][:body] = ""
+        message = empty_message
         post :create, message
         expect(flash[:alert]).to eq "メッセージを入力してください"
       end

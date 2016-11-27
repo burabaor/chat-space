@@ -7,7 +7,7 @@ FactoryGirl.define do
   factory :message do
     body FFaker::Tweet.body
   end
-  factory :empty_message do
+  factory :empty_message , class: Message do
     body ""
   end
 end
