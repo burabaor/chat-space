@@ -5,8 +5,14 @@ class MessagesController < ApplicationController
   end
   def create
     message = Message.new(create_params)
-    flash[:alert] = "メッセージを入力してください" unless message.save
-    redirect_to group_messages_path(@group)
+    if message.save
+      respond_to do |format|
+        format.html { redirect_to_messages_index }
+        format.json { render json: message.params_for_json }
+      end
+    else
+      render json: ""
+    end
   end
 
   private
@@ -15,5 +21,8 @@ class MessagesController < ApplicationController
   end
   def create_params
     params.require(:message).permit(:body).merge(group_id: @group.id, user_id: current_user.id)
+  end
+  def redirect_to_messages_index
+    redirect_to group_messages_path(@group)
   end
 end
