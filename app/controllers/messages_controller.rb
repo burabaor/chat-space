@@ -11,11 +11,7 @@ class MessagesController < ApplicationController
         format.json { render json: message.params_for_json }
       end
     else
-      flash[:alert] = "メッセージを入力してください"
-      respond_to do |format|
-        format.html { redirect_to_messages_index }
-        format.json { render json: "" }
-      end
+      render
     end
   end
 
