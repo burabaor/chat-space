@@ -18,7 +18,7 @@ $(function() {
     return html;
   }
 
-  $('.new-message__submit-button').on('click', function(e) {
+  $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var textField = $('.new-message__input-form');
     var message = textField.val();
