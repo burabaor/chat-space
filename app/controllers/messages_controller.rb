@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
         format.json { render json: message.params_for_json }
       end
     else
-      render
+      render json: ""
     end
   end
 
