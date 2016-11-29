@@ -1,20 +1,19 @@
 $(function() {
   function buildHTML(message) {
-    var html = [
-      '<div class="message">',
-        '<div class="message__detail">',
-          '<span class="message__user-name">',
-            message.user_name,
-          '</span>',
-          '<span class="message__sended-date">',
-            message.created_at,
-          '</span>',
-        '</div>',
-        '<span class="message_content">',
-          message.body,
-        '</span>',
-      '</div>'
-    ].join("");
+    var html =
+      '<div class="message">' +
+        '<div class="message__detail">' +
+          '<span class="message__user-name">' +
+            message.user_name +
+          '</span>' +
+          '<span class="message__sended-date">' +
+            message.created_at +
+          '</span>' +
+        '</div>' +
+        '<span class="message_content">' +
+          message.body +
+        '</span>' +
+      '</div>';
     return html;
   }
 
