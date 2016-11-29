@@ -22,7 +22,7 @@ $(function() {
     e.preventDefault();
     var textField = $('.new-message__input-form');
     var message = textField.val();
-    var url = $('.new-message').attr('action') + '.json'
+    var url = location.href + '.json'
     $.ajax({
       type: 'POST',
       url: url,
