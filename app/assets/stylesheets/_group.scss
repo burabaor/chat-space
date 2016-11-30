@@ -96,6 +96,12 @@ body {
         cursor: pointer;
       }
     }
+    .user-search-result__btn {
+      color: $notification-color;
+    }
+    &__remove-btn {
+      color: $alert-color;
+    }
     label {
       float: left;
       margin-right: 15px;
