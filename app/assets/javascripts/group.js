@@ -49,3 +49,11 @@ $(function() {
     $('#chat-group-users').append(user_html)
   });
 });
+
+// 仮のチャットメンバーからユーザーを削除
+$(function() {
+  $('#chat-group-users').on('click', '.chat-group-user__remove-btn', function() {
+    user_html = $(this).parent();
+    user_html.remove();
+  })
+})
