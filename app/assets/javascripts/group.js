@@ -3,7 +3,7 @@ $(function() {
   function buildHTML(user) {
     var html =
       '<div class="chat-group-user">' +
-        '<span>' +
+        '<span name="' + user.id + '">' +
           user.name +
         '</span>' +
         '<a class="user-search-result__btn">追加</a>' +
@@ -31,30 +31,45 @@ $(function() {
   });
 });
 
-// 候補から選択されたユーザーをチャットメンバーに表示
 $(function() {
-  function buildHTML(user) {
+// hidden_fieldのuser_idsのvalueをセッティング
+  function insert_user_ids() {
+    var user_ids = []
+    var member_elements = $('#chat-group-users span');
+    $.each(member_elements, function(i, ele) {
+      var user_id = $(ele).attr('name');
+      user_ids.push(user_id);
+    });
+    $('#group_user_ids').attr({
+      'value': user_ids
+    });
+  }
+
+// 候補から選択されたユーザーをチャットメンバーに表示
+  function buildHTML(name, id) {
     var html =
       '<div class="chat-group-user">' +
-        '<span>' +
-          user +
+        '<span name="' + id + '">' +
+          name +
         '</span>' +
         '<a class="chat-group-user__remove-btn">削除</a>' +
       '</div>';
     return html;
   }
   $('#user-search-result').on('click', '.user-search-result__btn' ,function() {
-    user = $(this).prev().text();
-    var user_html = buildHTML(user);
+    var brother_ele = $(this).prev();
+    var name = brother_ele.text();
+    var id   = brother_ele.attr('name');
+    var user_html = buildHTML(name, id);
     $('#chat-group-users').append(user_html)
     $(this).parent().remove();
+    insert_user_ids();
   });
-});
 
 // 仮のチャットメンバーからユーザーを削除
-$(function() {
   $('#chat-group-users').on('click', '.chat-group-user__remove-btn', function() {
     user_html = $(this).parent();
     user_html.remove();
+    insert_user_ids();
   })
 })
