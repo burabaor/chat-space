@@ -37,7 +37,7 @@ $(function() {
     var html =
       '<div class="chat-group-user">' +
         '<span>' +
-          user.name +
+          user +
         '</span>' +
         '<a class="chat-group-user__remove-btn">削除</a>' +
       '</div>';
