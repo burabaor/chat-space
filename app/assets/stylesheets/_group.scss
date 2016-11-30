@@ -86,6 +86,16 @@ body {
     font-size: 14px;
     border-bottom: 1px solid #ddd;
 
+    span:after {
+      display: inline;
+    }
+    a {
+      text-decoration: none;
+      float: right;
+      &:hover {
+        cursor: pointer;
+      }
+    }
     label {
       float: left;
       margin-right: 15px;
