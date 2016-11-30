@@ -47,6 +47,7 @@ $(function() {
     user = $(this).prev().text();
     var user_html = buildHTML(user);
     $('#chat-group-users').append(user_html)
+    $(this).parent().remove();
   });
 });
 
