@@ -10,8 +10,9 @@ $(function() {
       '</div>';
     return html;
   }
+
   $('#user-search-field').on('keyup', function() {
-    var textField = $('#user-search-field');
+    var textField = $(this);
     var name = textField.val();
     $.ajax({
       type: 'GET',
@@ -55,6 +56,7 @@ $(function() {
       '</div>';
     return html;
   }
+
   $('#user-search-result').on('click', '.user-search-result__btn' ,function() {
     var brother_ele = $(this).prev();
     var name = brother_ele.text();
