@@ -1,0 +1,4 @@
+.chat-group-user.clearfix
+  %span{name: "#{member.id}"} #{member.name}
+  %a.chat-group-user__remove-btn 削除
+  %input.group_user_ids{name: "group[user_ids][]", type: "hidden", value: "#{member.id}"}
