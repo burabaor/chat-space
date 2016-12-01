@@ -100,6 +100,12 @@
     i {
       float: left;
       margin: 20px 0 0 -45px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &__file-form {
+      display: none;
     }
     &__submit-button {
       padding: 0;
