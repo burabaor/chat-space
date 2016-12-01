@@ -34,14 +34,13 @@ $(function() {
 $(function() {
 // hidden_fieldのuser_idsのvalueをセッティング
   function insert_user_ids() {
-    var user_ids = []
     var member_elements = $('#chat-group-users span');
+    $('.group_user_ids').remove();
     $.each(member_elements, function(i, ele) {
       var user_id = $(ele).attr('name');
-      user_ids.push(user_id);
-    });
-    $('#group_user_ids').attr({
-      'value': user_ids
+      $('#chat-group-users').append(
+        '<input type="hidden" class="group_user_ids" name="group[user_ids][]" value="' + user_id + '">'
+      );
     });
   }
 
