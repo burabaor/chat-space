@@ -1,7 +1,7 @@
 $(function() {
   // 自動更新のセッティング
   if(location.href.match(/messages/)) {
-    setInterval("location.reload()",1000000);
+    setInterval("location.reload()",10000);
   }
 
   // 新規メッセージのhtmlテンプレート
