@@ -1,4 +1,8 @@
 $(function() {
+  // 自動更新のセッティング
+  setInterval("location.reload()",10000);
+
+  // 新規メッセージのhtmlテンプレート
   function buildHTML(message) {
     if (!message.image.url) message.image.url = "";
     var html =
@@ -19,6 +23,7 @@ $(function() {
     return html;
   }
 
+  // メッセージ作成の非同期通信処理
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
     var $form = $('form#new_message').get(0);
