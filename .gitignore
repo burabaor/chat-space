@@ -12,6 +12,6 @@
 !/log/.keep
 /tmp
 
-*.png
+/public/uploads
 
 .env
