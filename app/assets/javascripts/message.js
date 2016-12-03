@@ -32,7 +32,7 @@ $(function() {
           $('.chat-body').append(html);
         });
       });
-    } ,3000);
+    } ,10000);
 
   // メッセージ作成の非同期通信処理
   $('#new_message').on('submit', function(e) {
