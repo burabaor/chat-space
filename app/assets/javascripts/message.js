@@ -1,5 +1,6 @@
 $(function() {
   function buildHTML(message) {
+    if (!message.image.url) message.image.url = "";
     var html =
       '<div class="message">' +
         '<div class="message__detail">' +
@@ -13,29 +14,29 @@ $(function() {
         '<span class="message_content">' +
           message.body +
         '</span>' +
+        '<img src="' + message.image.url + '">' +
       '</div>';
     return html;
   }
 
   $('#new_message').on('submit', function(e) {
     e.preventDefault();
-    var textField = $('.new-message__input-form');
-    var message = textField.val();
-    var url = location.href + '.json'
+    var $form = $('form#new_message').get(0);
+    var fd = new FormData($form);
+    var url = location.href + '.json';
     $.ajax({
       type: 'POST',
       url: url,
-      data: {
-        message: {
-          body: message
-        }
-      },
-      dataType: 'json'
+      data: fd,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-body').append(html);
-      textField.val('');
+      $('#message_body').val('');
+      $('#message_image').val();
     })
     .fail(function() {
       alert('error');

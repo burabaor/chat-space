@@ -53,3 +53,6 @@ gem "haml-rails", "~> 0.9"
 gem "font-awesome-sass"
 gem 'devise'
 gem 'ffaker'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'fog'
+gem 'dotenv-rails'
