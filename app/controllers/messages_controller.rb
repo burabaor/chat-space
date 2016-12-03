@@ -2,6 +2,16 @@ class MessagesController < ApplicationController
   before_action :find_group
   def index
     @message = Message.new
+    @messages = @group.messages
+    respond_to do |format|
+      format.html
+      format.json {
+        messages = @messages.map do |message|
+          message.params_for_json
+        end
+        render json: messages
+      }
+    end
   end
   def create
     message = Message.new(create_params)
