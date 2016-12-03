@@ -1,5 +1,6 @@
 $(function() {
   function buildHTML(message) {
+    if (!message.image.url) message.image.url = "";
     var html =
       '<div class="message">' +
         '<div class="message__detail">' +
@@ -15,9 +16,6 @@ $(function() {
         '</span>' +
         '<img src="' + message.image.url + '">' +
       '</div>';
-      if (message.image.url != null) {
-        $(html .message).append($('<img src="' + message.image.url + '">'));
-      }
     return html;
   }
 
@@ -37,7 +35,7 @@ $(function() {
     .done(function(data) {
       var html = buildHTML(data);
       $('.chat-body').append(html);
-      textField.val('');
+      $('#message_body').val('');
       $('#message_image').val();
     })
     .fail(function() {

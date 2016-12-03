@@ -2,5 +2,7 @@
   .message__detail
     %span.message__user-name #{message.user.name}
     %span.message__sended-date #{message.created_at}
-  %span.message__content #{message.body}
-  =image_tag message.image
+  - if message.body.present?
+    %span.message__content #{message.body}
+  -else
+    =image_tag message.image, alt: ""
